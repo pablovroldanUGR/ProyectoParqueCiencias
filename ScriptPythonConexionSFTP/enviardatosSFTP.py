@@ -1,8 +1,9 @@
 import paramiko
 import os
+import filetype
 
 # IP del host a enviar y puerto SSH
-host = "192.168.1.106"
+host = "192.168.56.110"
 port = 22
 
 # Credenciales de acceso
@@ -14,23 +15,27 @@ DirectorioRemoto = "/home/rpi/fotos"
 
 #Configurar conexion SSH
 client = paramiko.SSHClient()
-client.set_missing_host_key_policy(paramiko.AutoAddPolicy)
 
 try:
 
     #Abrir conexion SSH
-    client.connect(host, port, username, password)
+    client.connect(host, port, username, password, look_for_keys=False)
 
     #Abrir conexion SFTP
     sftp = client.open_sftp()
 
     for archivo in os.listdir("."):
-        if os.is_file(archivo)
-            rutaLocal = os.cu archivo
+        if filetype.is_image(archivo):
+            rutaLocal = archivo
             rutaRemota = DirectorioRemoto + "/" + archivo
 
-        print(rutaLocal)
-        print(rutaRemota)
+            print("Archivo " + rutaLocal + " transferido")
+            print("Nueva ruta: " + rutaRemota)
+            print("-----------Enviando-------------")
+
+            sftp.put(rutaLocal, rutaRemota)
+
+    client.close()
 
 except Exception as e:
     print(f"Error: {e}")
