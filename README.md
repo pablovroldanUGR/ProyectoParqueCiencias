@@ -1,49 +1,141 @@
-# ProyectoParqueCiencias
-Proyecto del parque de las ciencias para llevar una cámara a las capas altas de la atmósfera 
+# Proyecto Parque de las Ciencias
 
-Se quiere mandar con una sonda un dispositivo capaz de hacer un time lapse (una foto por segundo...) y que envíe en tiempo real dichas fotos a un ordenador que esté en tierra conectándose con una sim (p ej. por SFTP o Whatsapp/Telegram...)
+Proyecto para el **Parque de las Ciencias** cuyo objetivo es llevar una **cámara a las capas altas de la atmósfera** mediante una sonda.
 
-Propuesta 1:
-  Utilizar un móvil y desarrollar una APK para hacer una foto cada X segundos y mandarla a un ordenador en tierra con la sim
-  
-  Ventajas:
-    - Hardware ya incluido dentro del móvil
-    - Mejor software de posprocesado de fotos
-    - Mejor cámara
+La misión consiste en enviar un dispositivo capaz de realizar un **time‑lapse** (por ejemplo, **1 foto por segundo**) y **transmitir las imágenes en tiempo real** a un ordenador en tierra utilizando una **SIM de datos** (p. ej. vía **SFTP** o **WhatsApp/Telegram**).
 
-  Desventajas:
-    - No aguanta bien el frío
-    - Conexión limitada por la antena del móvil
-    - Empezar a programar APKs desde cero
-    - Dificultad para gestionar el móvil en remoto (necesita root)
-    - Poco profesional
-    - Consume mucha batería
+---
 
-Propuesta 2:
-  Utilizar una raspberry con módulos de sim y cámara y ejecutar un script de python que se encargue de hacer la foto cada X segundos y mandarla a un ordenador en tierra con la sim
+## 🎯 Objetivos del proyecto
 
-  Ventajas:
-    - Consume poca batería
-    - Mas profesional
-    - Programación en Python/C++
-    - Facil de acceder en remoto (linux directamente con ssh)
-    - Se le puede instalar una mejor antena
+* Capturar imágenes de la atmósfera a gran altitud.
+* Realizar un time‑lapse configurable.
+* Enviar las fotografías en tiempo real a tierra.
+* Minimizar consumo energético y peso.
+* Garantizar funcionamiento en condiciones extremas de temperatura.
 
-  Desventajas:
-    - Hay que buscar y montar los módulos de hardware
-    - Peor cámara
-    - Peor software para procesar fotos
+---
 
+## Propuestas evaluadas
 
-Decisión final:
-  Usar Raspberry pi zero 2w por su compatibilidad con cámaras de hasta 12MP y su bajo consumo. Puede funcionar de -20 grados a 70 grados (es ideal para el proecto). Necesitaremos un módulo de cámara, un módulo de sim (con una antena) y opcionalmente un módulo GPS.
-  Raspberry pi zero 2w: [pi zero 2w](https://www.raspberrypi.com/products/raspberry-pi-zero-2-w/) ~20€
-  
-      Enlaces de compra: [raspipc](https://www.raspipc.es/1956?src=raspberrypi) , [reichelt](https://www.reichelt.com/es/es/shop/producto/raspberry_pi_zero_2_w_4x_1_ghz_512_mb_ram_wlan_bt-313902?utm_campaign=&track_id=&country=es&CCTYPE=private&LANGUAGE=es) , [tiendatec](https://www.tiendatec.es/raspberry-pi/gama-raspberry-pi/1735-raspberry-pi-zero-2-w.html?src=raspberrypi)
+### 🔹 Propuesta 1: Uso de un teléfono móvil
 
-  Cámaras compatibles: 
-    - Raspberry camera module 3 (12MP): [pi camera module 3](https://www.raspberrypi.com/products/camera-module-3/) ~30€
-        Enlaces de compra: [raspipc](https://www.raspipc.es/2014?src=raspberrypi) , [tiendatec](https://www.tiendatec.es/raspberry-pi/camaras/1984-camara-oficial-raspberry-pi-v3-12mpx-5056561803241.html?src=raspberrypi) , [reichelt](https://www.reichelt.com/es/es/shop/producto/raspberry_pi_-_camara_12mp_76_v3-339256)
-    - Raspberry pi HQ camera (12.3MP): [pi HQ camera](https://www.raspberrypi.com/products/raspberry-pi-high-quality-camera/) ~55€
-      Enlaces de compra: [reichelt](https://www.reichelt.com/es/es/shop/producto/raspberry_pi_-_camara_12mp_75_-276919) , [raspipc](https://www.raspipc.es/index.php?ver=tienda&accion=verArticulo&idProducto=1808&src=raspberrypi) , [tiendatec](https://www.tiendatec.es/raspberry-pi/camaras/1195-camara-hq-oficial-raspberry-pi-montura-cs-c-5056561800127.html?src=raspberrypi)
-      Enlaces de compra de objetivos (gran angulares 6mm): ~30€ [reichelt](https://www.reichelt.com/es/es/shop/producto/raspberry_pi_-_lente_de_camara_de_6mm_gran_angular-276922) , [raspipc](https://www.raspipc.es/1810) , [tiendatec](https://www.tiendatec.es/raspberry-pi/camaras/1192-lente-fija-4mm-montura-cs-para-camara-hq-raspberry-pi-8472496016568.html)
+Utilizar un **móvil** y desarrollar una **APK** que:
+
+* Tome una fotografía cada *X* segundos.
+* Envíe las imágenes a un ordenador en tierra usando la SIM.
+
+**Ventajas**
+
+* Hardware ya integrado en el móvil.
+* Mejor software de posprocesado de imágenes.
+* Cámara de mayor calidad.
+
+**Desventajas**
+
+* No tolera bien temperaturas bajas.
+* Conectividad limitada por la antena del móvil.
+* Desarrollo de APK desde cero.
+* Difícil gestión remota (requiere *root*).
+* Solución poco profesional.
+* Alto consumo de batería.
+
+---
+
+### 🔹 Propuesta 2: Raspberry Pi + módulos externos
+
+Utilizar una **Raspberry Pi** con:
+
+* Módulo de cámara.
+* Módulo SIM.
+* Script en **Python/C++** para capturar y enviar imágenes.
+
+**Ventajas**
+
+* Bajo consumo energético.
+* Enfoque más profesional.
+* Programación flexible en Python/C++.
+* Acceso remoto sencillo (Linux + SSH).
+* Posibilidad de usar antenas externas de mayor alcance.
+
+**Desventajas**
+
+* Requiere búsqueda y montaje de módulos de hardware.
+* Cámara de menor calidad frente a un móvil.
+* Software de procesado de imágenes más limitado.
+
+---
+
+## Decisión final
+
+Se elige **Raspberry Pi Zero 2 W** por:
+
+* Compatibilidad con cámaras de hasta **12 MP**.
+* **Bajo consumo** energético.
+* Rango de funcionamiento aproximado de **−20 °C a 70 °C**, ideal para el proyecto.
+
+### Componentes necesarios
+
+* Raspberry Pi Zero 2 W
+* Módulo de cámara
+* Módulo SIM con antena
+* (Opcional) Módulo GPS
+
+---
+
+## Hardware seleccionado
+
+### Raspberry Pi Zero 2 W
+
+* Precio aproximado: **~20 €**
+* Producto: [Raspberry Pi Zero 2 W](https://www.raspberrypi.com/products/raspberry-pi-zero-2-w/)
+
+**Enlaces de compra**
+
+* [Raspipc](https://www.raspipc.es/1956?src=raspberrypi)
+* [Reichelt](https://www.reichelt.com/es/es/shop/producto/raspberry_pi_zero_2_w_4x_1_ghz_512_mb_ram_wlan_bt-313902?country=es&CCTYPE=private&LANGUAGE=es)
+* [Tiendatec](https://www.tiendatec.es/raspberry-pi/gama-raspberry-pi/1735-raspberry-pi-zero-2-w.html?src=raspberrypi)
+
+---
+
+### Cámaras compatibles
+
+#### 🔸 Raspberry Pi Camera Module 3 (12 MP)
+
+* Precio aproximado: **~30 €**
+* Producto: [Camera Module 3](https://www.raspberrypi.com/products/camera-module-3/)
+
+**Enlaces de compra**
+
+* [Raspipc](https://www.raspipc.es/2014?src=raspberrypi)
+* [Tiendatec](https://www.tiendatec.es/raspberry-pi/camaras/1984-camara-oficial-raspberry-pi-v3-12mpx-5056561803241.html?src=raspberrypi)
+* [Reichelt](https://www.reichelt.com/es/es/shop/producto/raspberry_pi_-_camara_12mp_76_v3-339256)
+
+---
+
+#### 🔸 Raspberry Pi HQ Camera (12.3 MP)
+
+* Precio aproximado: **~55 €**
+* Producto: [HQ Camera](https://www.raspberrypi.com/products/raspberry-pi-high-quality-camera/)
+
+**Enlaces de compra**
+
+* [Reichelt](https://www.reichelt.com/es/es/shop/producto/raspberry_pi_-_camara_12mp_75_-276919)
+* [Raspipc](https://www.raspipc.es/index.php?ver=tienda&accion=verArticulo&idProducto=1808&src=raspberrypi)
+* [Tiendatec](https://www.tiendatec.es/raspberry-pi/camaras/1195-camara-hq-oficial-raspberry-pi-montura-cs-c-5056561800127.html?src=raspberrypi)
+
+**Objetivos compatibles (gran angular ~6 mm)**
+
+* Precio aproximado: **~30 €**
+* [Reichelt](https://www.reichelt.com/es/es/shop/producto/raspberry_pi_-_lente_de_camara_de_6mm_gran_angular-276922)
+* [Raspipc](https://www.raspipc.es/1810)
+* [Tiendatec](https://www.tiendatec.es/raspberry-pi/camaras/1192-lente-fija-4mm-montura-cs-para-camara-hq-raspberry-pi-8472496016568.html)
+
+---
+
+## 🚀 Estado del proyecto
+
+* [ ] Selección final de módulos SIM
+* [ ] Pruebas de cámara en condiciones de frío
+* [ ] Desarrollo del script de captura y envío
+* [ ] Integración y pruebas de vuelo
