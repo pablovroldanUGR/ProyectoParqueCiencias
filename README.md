@@ -38,6 +38,7 @@ Propuesta 2:
 Decisión final:
   Usar Raspberry pi zero 2w por su compatibilidad con cámaras de hasta 12MP y su bajo consumo. Puede funcionar de -20 grados a 70 grados (es ideal para el proecto). Necesitaremos un módulo de cámara, un módulo de sim (con una antena) y opcionalmente un módulo GPS.
   Raspberry pi zero 2w: [pi zero 2w](https://www.raspberrypi.com/products/raspberry-pi-zero-2-w/) ~20€
+  
       Enlaces de compra: [raspipc](https://www.raspipc.es/1956?src=raspberrypi) , [reichelt](https://www.reichelt.com/es/es/shop/producto/raspberry_pi_zero_2_w_4x_1_ghz_512_mb_ram_wlan_bt-313902?utm_campaign=&track_id=&country=es&CCTYPE=private&LANGUAGE=es) , [tiendatec](https://www.tiendatec.es/raspberry-pi/gama-raspberry-pi/1735-raspberry-pi-zero-2-w.html?src=raspberrypi)
 
   Cámaras compatibles: 
