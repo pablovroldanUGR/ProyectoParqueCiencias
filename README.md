@@ -133,9 +133,5 @@ Se elige **Raspberry Pi Zero 2 W** por:
 
 ---
 
-## 🚀 Estado del proyecto
-
-* [ ] Selección final de módulos SIM
-* [ ] Pruebas de cámara en condiciones de frío
-* [ ] Desarrollo del script de captura y envío
-* [ ] Integración y pruebas de vuelo
+## Otros aspectos a tener en cuenta 
+* Garantizar el funcionamiento utilizando un watchdog para poder "encender" el dispositivo en remoto
