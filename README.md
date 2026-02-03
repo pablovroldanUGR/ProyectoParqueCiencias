@@ -134,4 +134,4 @@ Se elige **Raspberry Pi Zero 2 W** por:
 ---
 
 ## Otros aspectos a tener en cuenta 
-* Garantizar el funcionamiento utilizando un watchdog para poder "encender" el dispositivo en remoto
+* Garantizar el funcionamiento en remoto utilizando un watchdog para poder "encender" el dispositivo en remoto
