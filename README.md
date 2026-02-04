@@ -134,3 +134,7 @@ Se elige **Raspberry Pi Zero 2 W** por:
 ---
 
 ## Otros aspectos a tener en cuenta 
+* Utilizar dos cámaras o un motor servo que mueva la cámara 90-180 grados para poder hacer fotos tanto a la superficie de la tierra como a dos horizontes (las cámaras se pueden multiplexar con un Arducam Multi Camera Adapter Doubleplexer Stereo Module V2 for Raspberry Pi CameraV3)
+* Sensores extra a incluir en el proyecto (para tenerlo todo centralizado en la raspberry)
+* Solucionar fuente de alimentación (powerbank/batería de litio/batería niMh/placa solar...)
+* Solucionar temperatura ambiente (aislamiento pasivo - ¿mini calefactor?)
